@@ -11,12 +11,12 @@ public class Conta {
     private Cliente cliente;
     private int agencia;
     private int numeroConta;
-    private String tipo;
+    private char tipo;
     private int senha;
     private double saldo;
     private ArrayList<Movimentacao> movimentacao = new ArrayList();
 
-    public Conta(String nome, int agencia, int numeroConta, String tipo, int senha, double saldo, ArrayList movimentacao) {
+    public Conta(String nome, int agencia, int numeroConta, char tipo, int senha, double saldo, ArrayList movimentacao) {
         this.nome = nome;
         this.agencia = agencia;
         this.numeroConta = numeroConta;
@@ -28,7 +28,7 @@ public class Conta {
     public int getNumConta(){
         return this.numeroConta;
     }
-    public Conta(String nome, int agencia, int numeroConta, String tipo, int senha, double saldo) {
+    public Conta(String nome, int agencia, int numeroConta, char tipo, int senha, double saldo) {
         this.nome = nome;
         this.agencia = agencia;
         this.numeroConta = numeroConta;
