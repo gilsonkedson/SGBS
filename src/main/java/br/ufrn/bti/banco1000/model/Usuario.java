@@ -2,8 +2,6 @@ package br.ufrn.bti.banco1000.model;
 
 import java.util.Date;
 
-import br.ufrn.bti.banco1000.enums.TipoUsuarioEnum;
-
 public class Usuario {
 	private int id;
 	private String login;
@@ -13,8 +11,13 @@ public class Usuario {
 	private Date dataCadastro;
 	private Date dataModificacao;
 	
-	public Usuario() {
-		// TODO Auto-generated constructor stub
+	public Usuario() {}
+	
+	public Usuario(Cliente cliente, String senha, char tipoUsuario) {
+		this.cliente = cliente;
+		this.login = cliente.getCpf();
+		this.senha = senha;
+		this.tipoUsuario = tipoUsuario;
 	}
 	
 	public int getId() {
@@ -73,9 +76,13 @@ public class Usuario {
 		this.dataModificacao = dataModificacao;
 	}
 	
+	public void validate() {
+		
+	}
+	
 	@Override
 	public String toString() {
-		return "Cliente: %s-%s".formatted(cliente.getNome(), cliente.getCpf());
+		return "Cliente: %s - %s".formatted(cliente.getNome(), cliente.getCpf());
 	}
 	
 }

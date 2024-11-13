@@ -14,9 +14,9 @@ public class Conta {
     private char tipo;
     private int senha;
     private double saldo;
-    private ArrayList<Movimentacao> movimentacao = new ArrayList();
+    private ArrayList<Movimentacao> movimentacao = new ArrayList<>();
 
-    public Conta(String nome, int agencia, int numeroConta, char tipo, int senha, double saldo, ArrayList movimentacao) {
+    public Conta(String nome, int agencia, int numeroConta, char tipo, int senha, double saldo, ArrayList<Movimentacao> movimentacao) {
         this.nome = nome;
         this.agencia = agencia;
         this.numeroConta = numeroConta;

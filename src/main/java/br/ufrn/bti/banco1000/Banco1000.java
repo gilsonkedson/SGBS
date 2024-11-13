@@ -4,8 +4,6 @@
 
 package br.ufrn.bti.banco1000;
 
-import br.ufrn.bti.banco1000.model.Cliente;
-import br.ufrn.bti.banco1000.model.Usuario;
 import br.ufrn.bti.banco1000.view.BancoView;
 
 /**

@@ -15,6 +15,24 @@ public class Constantes {
 	public static final int TRANSFERIR = 3;
 	public static final int PIX = 4;
 	
+	// MENSAGENS
+	public static final String MENSAGEM_SAUDACAO = "---- Bem vindo ao IMD Bank. ----";
+	public static final String MENSAGEM_ESCOLHA = "Escolha uma de nossas opções disponíveis: ";
+	public static final String MENSAGEM_ENCERRAMENTO = "Aplicação encerrada com sucesso.";
+	public static final String MENSAGEM_TRACINHOS = "----------------------------";
+	public static final String MENSAGEM_BANCO = "---- IMD BANK ----";
+	public static final String MENSAGEM_LOGIN = "---- ENTRAR NO SISTEMA ----";
+	public static final String MENSAGEM_CADASTRO = "---- TELA DE CADASTRO ----";
+	public static final String MENSAGEM_INFORMACOES_PESSOAIS = "-- Informações de Cadastro --";
+	
+	// CAMPOS
+	public static final String CAMPO_NOME = "Nome: ";
+	public static final String CAMPO_CPF= "CPF: ";
+	public static final String CAMPO_EMAIL= "Email: ";
+	public static final String CAMPO_TELEFONE= "Telefone: ";
+	public static final String CAMPO_LOGIN = "Usuário (CPF): ";
+	public static final String CAMPO_SENHA = "Senha: ";
+	
 	public static Map<Integer, String> OPCOES_TELA_INICIAL = new HashMap<Integer, String>();
 	
 	static {
