@@ -4,24 +4,24 @@
  */
 package br.ufrn.bti.banco1000.model;
 
+import java.util.List;
+
 /**
  *
  * @author vinicius
  */
-public class Cliente {
+public class Cliente extends GenericModel {
     private String nome;
     private String cpf;
     private String email;
     private String telefone;
-    private Conta conta;
+    private List<Conta> contas;
     
     public Cliente(String nome, String cpf, String email, String telefone){
        this.nome = nome;
        this.cpf = cpf;
        this.email = email;
        this. telefone = telefone;
-       
-       
     }
 
     public String getNome() {
@@ -55,13 +55,20 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
-    public Conta getConta() {
-        return conta;
+    
+    public List<Conta> getContas() {
+        return contas;
+    }
+    
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
     }
 
-    public void setConta(Conta conta) {
-        this.conta = conta;
-    }    
-    
+    public Conta getConta(int contaEscolhida) throws Exception {
+    	if(contas.size() >= contaEscolhida) {
+    		return contas.get(contaEscolhida - 1);    		
+    	}
+    	
+    	throw new Exception("Opção de conta inválida.");
+    }
 }

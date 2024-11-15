@@ -6,17 +6,18 @@ package br.ufrn.bti.banco1000.model;
 
 import java.util.ArrayList;
 
-public class Conta {
+public class Conta extends GenericModel {
     private String nome;
     private Cliente cliente;
+    private Usuario usuario;
     private int agencia;
     private int numeroConta;
-    private String tipo;
+    private char tipo;
     private int senha;
     private double saldo;
-    private ArrayList<Movimentacao> movimentacao = new ArrayList();
+    private ArrayList<Movimentacao> movimentacao = new ArrayList<>();
 
-    public Conta(String nome, int agencia, int numeroConta, String tipo, int senha, double saldo, ArrayList movimentacao) {
+    public Conta(String nome, int agencia, int numeroConta, char tipo, int senha, double saldo, ArrayList<Movimentacao> movimentacao) {
         this.nome = nome;
         this.agencia = agencia;
         this.numeroConta = numeroConta;
@@ -25,10 +26,8 @@ public class Conta {
         this.saldo = saldo;
         this.movimentacao = movimentacao;
     }
-    public int getNumConta(){
-        return this.numeroConta;
-    }
-    public Conta(String nome, int agencia, int numeroConta, String tipo, int senha, double saldo) {
+    
+    public Conta(String nome, int agencia, int numeroConta, char tipo, int senha, double saldo) {
         this.nome = nome;
         this.agencia = agencia;
         this.numeroConta = numeroConta;
@@ -71,22 +70,107 @@ public class Conta {
         }
     }
     
-    public String getNome() {
-        return this.nome;
-    }    
+    public int getId() {
+		return id;
+	}
     
-    public double getSaldo() {
-        return this.saldo;
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	public int getAgencia() {
+		return agencia;
+	}
+	
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+	
+	public int getNumeroConta() {
+		return numeroConta;
+	}
+	
+	public void setNumeroConta(int numeroConta) {
+		this.numeroConta = numeroConta;
+	}
+	
+	public char getTipo() {
+		return tipo;
+	}
+	
+	public void setTipo(char tipo) {
+		this.tipo = tipo;
+	}
+	
+	public int getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	public ArrayList<Movimentacao> getMovimentacao() {
+		return movimentacao;
+	}
+	
+	public void setMovimentacao(ArrayList<Movimentacao> movimentacao) {
+		this.movimentacao = movimentacao;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+	    if (this == obj) {
+	        return true;
+	    }
+	    
+	    Conta conta = (Conta) obj;
+	    
+	    if (this.id == conta.getId()) {
+	        return true;
+	    }
+	    
+	    if (conta.getNumeroConta() == this.getNumeroConta()) {
+	        return true;
+	    }
+	    
+	    return false;
     }
     
     @Override
-    public boolean equals(Object o){
-        return false;
-    }
-    
-    @Override
-    public String toString()
-    {
+    public String toString() {
         return "";
     }
 }

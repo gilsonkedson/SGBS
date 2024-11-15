@@ -4,6 +4,8 @@
 
 package br.ufrn.bti.banco1000;
 
+import br.ufrn.bti.banco1000.view.BancoAppView;
+
 /**
  *
  * @author vinicius
@@ -11,6 +13,6 @@ package br.ufrn.bti.banco1000;
 public class Banco1000 {
 
     public static void main(String[] args) {
-        System.out.println("");
+    	new BancoAppView();
     }
 }
