@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author vinicius
  */
-public class Cliente {
+public class Cliente extends GenericModel {
     private String nome;
     private String cpf;
     private String email;

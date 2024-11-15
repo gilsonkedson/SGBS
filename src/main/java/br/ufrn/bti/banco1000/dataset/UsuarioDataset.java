@@ -1,13 +1,21 @@
 package br.ufrn.bti.banco1000.dataset;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.ufrn.bti.banco1000.custom.exceptions.CustomException;
 import br.ufrn.bti.banco1000.model.Cliente;
 import br.ufrn.bti.banco1000.model.Usuario;
 
-public class UsuarioDataset {
+/** 
+ * 
+ * @author Gilson Kedson 
+ * 
+ */
+public class UsuarioDataset implements GenericDataset<Usuario> {
 	private static Map<String, Usuario> usuarios = new HashMap<String, Usuario>();
 	
 	// Mock de dados inicial
@@ -23,18 +31,43 @@ public class UsuarioDataset {
 		usuarios.put(usuario.getLogin(), usuario);
 	}
 	
-	public static void criarUsuario(Usuario usuario) throws Exception {
+	@Override
+	public void criar(Usuario usuario) throws CustomException {
 		if(!usuarios.containsKey(usuario.getLogin())) {
-			usuario.setId(usuarios.size()+1);
+			usuario.setId(gerarProximoId());
 			usuario.setDataCadastro(new Date());
 			usuarios.put(usuario.getLogin(), usuario);
 			return;
 		}
 		
-		throw new Exception("Já existe usuário com o CPF informado. Tente novamente!\n");
+		throw new CustomException("Já existe usuário com o CPF informado. Tente novamente!\n");
+	}
+
+	@Override
+	public Usuario recuperar(int id) {
+		return usuarios.values().stream()
+				        .filter(usuario -> usuario.getId() == id)
+				        .findFirst()
+				        .orElse(null);
+	}
+
+	@Override
+	public Usuario atualizar(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void excluir(int id) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public int gerarProximoId() {
+	    return usuarios.isEmpty() ? 1 : Collections.max(usuarios.values(), Comparator.comparingInt(Usuario::getId)).getId() + 1;
 	}
 	
-	public static Usuario getUsuarioPorCpf(String cpf) {
+	public static Usuario recuperarUsuarioPorCpf(String cpf) {
 		return usuarios.get(cpf);
 	}
 }

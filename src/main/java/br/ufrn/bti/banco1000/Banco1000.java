@@ -4,7 +4,7 @@
 
 package br.ufrn.bti.banco1000;
 
-import br.ufrn.bti.banco1000.view.BancoView;
+import br.ufrn.bti.banco1000.view.BancoAppView;
 
 /**
  *
@@ -13,6 +13,6 @@ import br.ufrn.bti.banco1000.view.BancoView;
 public class Banco1000 {
 
     public static void main(String[] args) {
-    	BancoView.iniciarApp();
+    	new BancoAppView();
     }
 }

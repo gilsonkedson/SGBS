@@ -1,5 +1,10 @@
 package br.ufrn.bti.banco1000.enums;
 
+/** 
+ * 
+ * @author Gilson Kedson 
+ * 
+ */
 public enum TipoContaEnum {
 	SALARIO('S'),
 	CORRENTE('C'),
