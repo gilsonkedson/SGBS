@@ -7,11 +7,25 @@ import java.util.Date;
  * @author Gilson Kedson 
  * 
  */
-public class GenericModel {
+public abstract class GenericModel {
 	protected int id;
 	protected Date dataCadastro;
 	protected Date dataModificacao;
+	protected Integer idUsuarioAcao;
+	public abstract void validate() throws Exception;
+	public abstract void build(String[] args) throws Exception;
 	
+	public GenericModel() {}
+	
+	public GenericModel(int id) {
+		this.id = id;
+	}
+
+	public GenericModel(int id, Date dataCadastro) {
+		this.id = id;
+		this.dataCadastro = dataCadastro;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -34,5 +48,13 @@ public class GenericModel {
 	
 	public void setDataModificacao(Date dataModificacao) {
 		this.dataModificacao = dataModificacao;
+	}
+	
+	public int getIdUsuarioAcao() {
+		return idUsuarioAcao;
+	}
+	
+	public void setIdUsuarioAcao(int idUsuarioAcao) {
+		this.idUsuarioAcao = idUsuarioAcao;
 	}
 }

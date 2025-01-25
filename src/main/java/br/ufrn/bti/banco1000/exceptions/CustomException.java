@@ -1,4 +1,4 @@
-package br.ufrn.bti.banco1000.custom.exceptions;
+package br.ufrn.bti.banco1000.exceptions;
 
 /** 
  * 
@@ -6,6 +6,11 @@ package br.ufrn.bti.banco1000.custom.exceptions;
  * 
  */
 public class CustomException extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public CustomException(String mensagem) {
 		super(mensagem);
 	}
