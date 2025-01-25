@@ -9,9 +9,9 @@ public enum TipoUsuarioEnum {
 	Cliente('C'),
 	Funcionario('F');
 
-	public char tipo;
+	public char tipoUsuario;
 	
-	TipoUsuarioEnum(char tipo) {
-		this.tipo = tipo;
+	TipoUsuarioEnum(char tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 }

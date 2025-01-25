@@ -1,0 +1,4 @@
+id,nome,numero_identificador,endereco,nome_responsavel,taxa_manutencao_corrente,rendimento_mensal,total_saques,data_cadastro
+1,Agência BTI,100,IMD - UFRN,Reitoria - UFRN,"0,1","0,1",10,25/01/2025
+2,Agência BCC,101,IMD - UFRN,Reitoria - UFRN,"0,15","0,15",15,25/01/2025
+3,Agência BES,102,IMD - UFRN,Reitoria - UFRN,"0,3","0,3",5,25/01/2025
